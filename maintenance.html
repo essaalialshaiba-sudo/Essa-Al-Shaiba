@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title data-ar="مؤسسة عيسى الشيبة — خدمات الصيانة والتشطيبات" data-en="Essa Al Shaiba Establishment — Maintenance & Finishing Services">
+مؤسسة عيسى الشيبة — خدمات الصيانة والتشطيبات
+</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Cairo',sans-serif;background:linear-gradient(180deg,#e0f7fa 0%,#bae6fd 50%,#7dd3fc 100%);color:#1e293b;transition:background .5s,color .5s}
+.container{max-width:1200px;margin:40px auto;padding:20px;position:relative;z-index:1}
+
+.lang-bar{position:fixed;top:50%;right:0;transform:translateY(-50%);background:#0284c7;color:#fff;padding:10px 0;border-radius:10px 0 0 10px;z-index:1000;text-align:center;font-weight:600}
+.lang-bar button{display:block;width:60px;background:transparent;color:#fff;border:none;padding:10px 0;cursor:pointer;font-weight:700;transition:.3s}
+.lang-bar button:hover{background:#0369a1}
+
+.hero{position:relative;height:60vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;margin-bottom:30px}
+/* تم التعديل هنا */
+.hero::before{content:"";position:absolute;inset:0;background:url('images/logo.png') center/contain no-repeat;opacity:0.08;z-index:0}
+.hero h1{font-size:2.2rem;margin-bottom:12px;position:relative;z-index:1}
+.hero p{font-size:1.1rem;max-width:700px;line-height:1.7;position:relative;z-index:1}
+
+header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;flex-wrap:wrap;position:relative;z-index:1}
+nav{display:flex;gap:10px;flex-wrap:wrap}
+nav a{text-decoration:none;padding:12px 20px;background:#fff;border-radius:12px;color:#0f172a;font-weight:600;font-size:16px;transition:.3s}
+nav a:hover{background:#0284c7;color:#fff}
+
+.brand img{height:50px}
+
+.main{display:flex;flex-direction:column;gap:20px}
+.card{background:#fff;border-radius:16px;padding:20px;box-shadow:0 4px 16px rgba(0,0,0,0.1);overflow:hidden;transition:max-height .5s ease,opacity .5s ease}
+.card h2{font-size:22px;margin-bottom:12px}
+.card p{color:#334155;line-height:1.6}
+
+/* الخدمات */
+.services-grid{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;align-items:flex-start}
+.service{flex:1 1 45%;max-width:45%;background:#f8fafc;padding:20px;border-radius:12px;border:1px solid #e2e8f0;display:flex;flex-direction:column;align-items:center;transition:.3s;text-align:center}
+.service i{font-size:36px;color:#0284c7;margin-bottom:10px}
+.service h3{font-size:16px;margin-bottom:6px}
+.service p{font-size:14px;color:#475569;line-height:1.5}
+.service.single-center{flex:1 1 100%;max-width:500px;margin:0 auto}
+
+.actions{display:flex;gap:20px;margin-top:20px;flex-wrap:wrap;justify-content:center}
+.btn{padding:14px 20px;border-radius:12px;text-decoration:none;font-weight:700;text-align:center;flex:1;max-width:220px;font-size:16px;transition:.3s}
+.btn-outline{border:2px solid #94a3b8;background:#fff;color:#334155}
+.btn-primary{background:#0284c7;color:#fff}
+.btn-primary:hover{background:#0369a1;transform:scale(1.05)}
+
+.contact h3, .about h3{margin-bottom:10px}
+.contact a{display:flex;align-items:center;gap:6px;color:#0284c7;text-decoration:none;font-size:14px;margin:4px 0}
+.contact a img{width:18px;height:18px}
+
+.about p{font-size:14px;color:#475569;line-height:1.6}
+
+/* اخفاء افتراضي */
+#about,#contact{max-height:0;opacity:0;display:none}
+
+/* Footer */
+footer{margin-top:20px;padding:16px;text-align:center;font-size:13px;color:#475569}
+
+@media(max-width:800px){
+  .service{flex:1 1 100%;max-width:100%}
+}
+</style>
+</head>
+<body>
+
+<div class="lang-bar">
+  <button onclick="toggleLang()">EN</button>
+</div>
+
+<section class="hero">
+  <h1 data-ar="مؤسسة عيسى الشيبة" data-en="Essa Al Shaiba Establishment">مؤسسة عيسى الشيبة</h1>
+  <p data-ar="تقدم المؤسسة مجموعة واسعة من الخدمات التي تغطي جميع مراحل المشروع، من التخطيط والتصميم إلى التنفيذ والتسليم، بجودة عالية والتزام كامل بالمواعيد."
+     data-en="The establishment offers a wide range of services covering all project phases, from planning and design to execution and delivery, with high quality and full commitment to deadlines.">
+     تقدم المؤسسة مجموعة واسعة من الخدمات التي تغطي جميع مراحل المشروع، من التخطيط والتصميم إلى التنفيذ والتسليم، بجودة عالية والتزام كامل بالمواعيد.
+  </p>
+</section>
+
+<div class="container">
+  <header>
+    <div class="brand">
+      <img src="images/logo.png" alt="مؤسسة عيسى الشيبة">
+    </div>
+    <nav>
+      <a href="javascript:void(0)" onclick="toggleSection('about')" data-ar="عنّا" data-en="About">عنّا</a>
+      <a href="javascript:void(0)" onclick="toggleSection('contact')" data-ar="تواصل" data-en="Contact">تواصل</a>
+    </nav>
+  </header>
+
+  <div class="main">
+    <div class="card" id="services">
+      <h2 data-ar="خدماتنا المتكاملة" data-en="Our Integrated Services">خدماتنا المتكاملة</h2>
+
+      <div class="services-grid">
+        <div class="service">
+          <i class="fas fa-tools"></i>
+          <h3 data-ar="أعمال الصيانة العامة" data-en="General maintenance work">أعمال الصيانة العامة</h3>
+          <p data-ar="صيانة دورية للمعدات والمنشآت لضمان استمرارية العمل بكفاءة." data-en="Regular maintenance of equipment and facilities to ensure continuous efficient operation.">صيانة دورية للمعدات والمنشآت لضمان استمرارية العمل بكفاءة.</p>
+        </div>
+        <div class="service">
+          <i class="fas fa-bolt"></i>
+          <h3 data-ar="الأعمال الكهربائية والسباكة" data-en="Electrical & Plumbing Works">الأعمال الكهربائية والسباكة</h3>
+          <p data-ar="تنفيذ جميع التمديدات وأنظمة الإنارة، الكهرباء والسباكة بمعايير السلامة." data-en="Execution of all wiring, lighting systems, electrical and plumbing works with safety standards.">تنفيذ جميع التمديدات وأنظمة الإنارة، الكهرباء والسباكة بمعايير السلامة.</p>
+        </div>
+        <div class="service">
+          <i class="fas fa-hammer"></i>
+          <h3 data-ar="أعمال النجارة" data-en="Carpentry Works">أعمال النجارة</h3>
+          <p data-ar="تصميم وتنفيذ المطابخ والخزائن والأبواب بأحدث اللمسات العصرية." data-en="Design and implementation of modern kitchens, cabinets, and doors with contemporary touches.">تصميم وتنفيذ المطابخ والخزائن والأبواب بأحدث اللمسات العصرية.</p>
+        </div>
+        <div class="service">
+          <i class="fas fa-window-maximize"></i>
+          <h3 data-ar="أعمال الزجاج والألمنيوم" data-en="Glass & Aluminium Works">أعمال الزجاج والألمنيوم</h3>
+          <p data-ar="توريد وتركيب النوافذ، الأبواب والفواصل الزجاجية والمرايا." data-en="Supply and installation of windows, doors, glass partitions and mirrors.">توريد وتركيب النوافذ، الأبواب والفواصل الزجاجية والمرايا.</p>
+        </div>
+        <div class="service single-center">
+          <i class="fas fa-paint-roller"></i>
+          <h3 data-ar="التصميم والديكور" data-en="Design & Decoration">التصميم والديكور</h3>
+          <p data-ar="تصميم وتنفيذ أحدث الديكورات الداخلية بدقة عالية من الفكرة حتى التنفيذ الكامل." data-en="Design and implementation of the latest interior decorations with high precision from concept to full execution.">تصميم وتنفيذ أحدث الديكورات الداخلية بدقة عالية من الفكرة حتى التنفيذ الكامل.</p>
+        </div>
+      </div>
+
+      <div class="actions">
+        <a class="btn btn-outline" href="javascript:void(0)" onclick="toggleSection('contact')" data-ar="تفاصيل الاتصال" data-en="Contact Details">تفاصيل الاتصال</a>
+        <a class="btn btn-primary" href="https://wa.me/97142722324" target="_blank" data-ar="تواصل عبر واتساب" data-en="Contact via WhatsApp">تواصل عبر واتساب</a>
+      </div>
+    </div>
+
+    <div class="card contact" id="contact">
+      <h3 data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</h3>
+      <a href="https://wa.me/97142722324"><img src="https://cdn-icons-png.flaticon.com/512/124/124034.png"><span data-ar="واتساب" data-en="WhatsApp">واتساب</span></a>
+      <a href="https://www.instagram.com/essa_alshiba_maintenance"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"><span data-ar="انستجرام" data-en="Instagram">انستجرام</span></a>
+      <a href="https://www.tiktok.com/@essa_al_shaiba_maintenan"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046120.png"><span data-ar="تيك توك" data-en="TikTok">تيك توك</span></a>
+      <a href="mailto:essaalialshaiba@gmail.com"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png"><span data-ar="البريد الإلكتروني" data-en="Email">essaalialshaiba@gmail.com</span></a>
+      <a href="https://maps.app.goo.gl/5RRUy5vSjq54iFCS9"><img src="https://cdn-icons-png.flaticon.com/512/684/684908.png"><span data-ar="الدور الثاني مكتب 206 — المطينة — مقابل ماركو بولو هوتيل — دبي" data-en="Second floor, Office 206 - Al Muteena - Opposite Marco Polo Hotel - Dubai
+">الدور الثاني مكتب 206 — المطينة — مقابل ماركو بولو هوتيل — دبي</span></a>
+    </div>
+
+    <div class="card about" id="about">
+      <h3 data-ar="عن مؤسسة عيسى الشيبة" data-en="About Essa Al Shaiba Establishment">عن مؤسسة عيسى الشيبة</h3>
+      <p data-ar="تلتزم المؤسسة بمعايير الجودة العالمية وتستخدم مواد عالية الجودة لضمان المتانة والأداء على المدى الطويل. كما أنها تخضع للوائح هيئة كهرباء ومياه دبي (DEWA) وبلدية دبي لضمان تنفيذ الأعمال بشكل احترافي وآمن." data-en="The establishment adheres to international quality standards and uses high-quality materials to ensure durability and long-term performance. It also complies with the regulations of DEWA and Dubai Municipality to ensure professional and safe execution.">تلتزم المؤسسة بمعايير الجودة العالمية وتستخدم مواد عالية الجودة لضمان المتانة والأداء على المدى الطويل. كما أنها تخضع للوائح هيئة كهرباء ومياه دبي (DEWA) وبلدية دبي لضمان تنفيذ الأعمال بشكل احترافي وآمن.</p>
+    </div>
+
+    <footer>© <span id="year"></span> <span data-ar="مؤسسة عيسى الشيبة — جميع الحقوق محفوظة" data-en="Essa Al Shaiba Establishment — All Rights Reserved">مؤسسة عيسى الشيبة — جميع الحقوق محفوظة</span></footer>
+  </div>
+</div>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+let currentLang = localStorage.getItem("lang") || "ar";
+applyLang(currentLang);
+
+function toggleLang(){
+  currentLang = currentLang === "ar" ? "en" : "ar";
+  applyLang(currentLang);
+  localStorage.setItem("lang", currentLang);
+}
+
+function applyLang(lang){
+  document.querySelectorAll("[data-ar]").forEach(el=>el.innerHTML = el.getAttribute("data-"+lang));
+  document.querySelector(".lang-bar button").textContent = lang==="ar"?"EN":"AR";
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang==="ar"?"rtl":"ltr";
+}
+
+// Toggle sections
+function toggleSection(id){
+  const sections = ['about','contact'];
+  sections.forEach(s=>{
+    const el=document.getElementById(s);
+    if(s===id){
+      if(el.style.display==='block'){
+        el.style.maxHeight='0'; el.style.opacity='0';
+        setTimeout(()=>el.style.display='none',500);
+      } else {
+        el.style.display='block'; el.style.maxHeight=el.scrollHeight+'px'; el.style.opacity='1';
+      }
+    } else {
+      el.style.maxHeight='0'; el.style.opacity='0';
+      setTimeout(()=>el.style.display='none',500);
+    }
+  });
+}
+</script>
+
+</body>
+</html>
