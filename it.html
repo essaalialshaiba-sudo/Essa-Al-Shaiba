@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>حلول تقنية المعلومات | IT Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Shared Styles applied */
+        :root { --primary: #0f2c59; --accent: #dac0a3; --bg: #f8fafc; --text: #334155; --white: #fff; --transition: 0.3s ease; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Cairo', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
+        
+        header { background: rgba(255,255,255,0.9); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100; padding: 15px 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); display: flex; justify-content: space-between; align-items: center; }
+        .brand img { height: 45px; width: auto; }
+        .home-center { position: absolute; left: 50%; transform: translateX(-50%); color: var(--primary); font-size: 1.4rem; transition: var(--transition); }
+        .home-center:hover { color: var(--accent); transform: translateX(-50%) scale(1.1); }
+
+        .lang-fixed { position: fixed; bottom: 20px; left: 20px; z-index: 1000; background: var(--primary); color: white; border: 2px solid var(--white); padding: 10px 20px; border-radius: 50px; font-weight: 700; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: var(--transition); font-family: 'Cairo', sans-serif; }
+        .lang-fixed:hover { transform: scale(1.05); background: var(--accent); color: var(--primary); }
+
+        .page-hero { text-align: center; padding: 60px 20px 40px; }
+        .page-hero h1 { color: var(--primary); font-size: 2rem; margin-bottom: 15px; font-weight: 700; }
+        .page-hero p { max-width: 700px; margin: 0 auto; line-height: 1.6; color: #64748b; }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        
+        .card { background: var(--white); padding: 30px; border-radius: 20px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.02); transition: var(--transition); border-bottom: 4px solid transparent; position: relative; overflow: hidden; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); border-bottom-color: var(--accent); }
+        .card::before { content: ''; position: absolute; inset: 0; background: var(--img); background-size: cover; background-position: center; opacity: 0; transition: 0.4s; z-index: 0; }
+        .card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(15, 44, 89, 0.95), rgba(15, 44, 89, 0.8)); opacity: 0; transition: 0.4s; z-index: 1; }
+        .card:hover::before, .card:hover::after { opacity: 1; }
+        
+        .card-content { position: relative; z-index: 2; }
+        .s-icon { font-size: 40px; color: var(--primary); margin-bottom: 20px; transition: var(--transition); }
+        .card h3 { margin-bottom: 10px; color: var(--primary); transition: var(--transition); }
+        .card p { font-size: 0.9rem; line-height: 1.5; color: #64748b; transition: var(--transition); }
+        .card:hover h3, .card:hover p, .card:hover .s-icon { color: white; }
+
+        .about-strip { background: linear-gradient(135deg, var(--primary), #1e293b); color: white; padding: 40px 20px; border-radius: 20px; margin: 50px 0; text-align: center; box-shadow: 0 10px 25px rgba(15, 44, 89, 0.15); }
+        .about-strip h3 { color: var(--accent); margin-bottom: 10px; font-size: 1.5rem; }
+
+        .contact-section { background: var(--white); padding: 40px 20px; border-radius: 24px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 30px; }
+        .c-item { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 15px; background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 0.9rem; transition: var(--transition); color: var(--text); }
+        .c-item img { width: 24px; height: 24px; object-fit: contain; }
+        
+        /* Unified Brands Colors */
+        .c-wa { color: #25D366; border-color: #25D366; background: #f0fdf4; } .c-wa:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(37, 211, 102, 0.2); }
+        .c-email { color: #EA4335; border-color: #EA4335; background: #fef2f2; } .c-email:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(234, 67, 53, 0.2); }
+        .c-insta { color: #E1306C; border-color: #E1306C; background: #fdf2f8; } .c-insta:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(225, 48, 108, 0.2); }
+        .c-fb { color: #1877F2; border-color: #1877F2; background: #eff6ff; } .c-fb:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(24, 119, 242, 0.2); }
+        .c-tik { color: #000000; border-color: #000000; background: #f8fafc; } .c-tik:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); }
+        .c-loc { color: #4285F4; border-color: #4285F4; background: #f0f9ff; } .c-loc:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(66, 133, 244, 0.2); }
+
+        footer { text-align: center; padding: 30px 20px; font-size: 0.85rem; color: #94a3b8; margin-top: 40px; }
+        .fade-in { opacity: 0; transform: translateY(20px); transition: 0.6s ease-out; }
+        .visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+    <button class="lang-fixed" onclick="toggleLang()">English</button>
+
+    <header>
+        <a href="index.html" class="brand"><img src="images/logo.png" alt="Logo"></a>
+        <a href="index.html" class="home-center"><i class="fas fa-home"></i></a>
+        <div style="width: 45px;"></div>
+    </header>
+
+    <div class="page-hero fade-in">
+        <h1 data-ar="حلول تقنية المعلومات" data-en="IT & Digital Solutions">حلول تقنية المعلومات</h1>
+        <p data-ar="تمكين الشركات بأحدث الحلول الرقمية، من البنية التحتية للشبكات إلى الأنظمة الأمنية الذكية." 
+           data-en="Empowering businesses with the latest digital solutions, from network infrastructure to smart security systems.">
+           تمكين الشركات بأحدث الحلول الرقمية، من البنية التحتية للشبكات إلى الأنظمة الأمنية الذكية.
+        </p>
+    </div>
+
+    <div class="container">
+        <div class="grid">
+            <div class="card fade-in" style="--img: url('https://images.unsplash.com/photo-1544197150-b99a580bbc7c?q=80&w=600');">
+                <div class="card-content">
+                    <i class="fas fa-network-wired s-icon"></i>
+                    <h3 data-ar="شبكات واتصالات" data-en="Networking Services">شبكات واتصالات</h3>
+                    <p data-ar="تصميم وتركيب شبكات الحاسب الآلي والسيرفرات والسنترالات الداخلية." data-en="Design and installation of computer networks, servers, and PABX systems.">تصميم وتركيب شبكات الحاسب الآلي والسيرفرات والسنترالات الداخلية.</p>
+                </div>
+            </div>
+            <div class="card fade-in" style="--img: url('https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=600');">
+                <div class="card-content">
+                    <i class="fas fa-video s-icon"></i>
+                    <h3 data-ar="أنظمة المراقبة CCTV" data-en="CCTV Security">أنظمة المراقبة CCTV</h3>
+                    <p data-ar="توريد وتركيب كاميرات المراقبة وأنظمة الدخول الذكي والبصمة." data-en="Supply and installation of CCTV cameras, smart access, and biometric systems.">توريد وتركيب كاميرات المراقبة وأنظمة الدخول الذكي والبصمة.</p>
+                </div>
+            </div>
+            <div class="card fade-in" style="--img: url('https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?q=80&w=600');">
+                <div class="card-content">
+                    <i class="fas fa-laptop-code s-icon"></i>
+                    <h3 data-ar="تطوير المواقع والبرامج" data-en="Web & Software Dev">تطوير المواقع والبرامج</h3>
+                    <p data-ar="تصميم مواقع إلكترونية للشركات وبرامج إدارة الموارد (ERP)." data-en="Corporate website design and ERP resource management software.">تصميم مواقع إلكترونية للشركات وبرامج إدارة الموارد (ERP).</p>
+                </div>
+            </div>
+            <div class="card fade-in" style="--img: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=600');">
+                <div class="card-content">
+                    <i class="fas fa-headset s-icon"></i>
+                    <h3 data-ar="الدعم الفني" data-en="IT Support">الدعم الفني</h3>
+                    <p data-ar="عقود صيانة سنوية لأجهزة الكمبيوتر والطابعات والشبكات." data-en="Annual maintenance contracts for computers, printers, and networks.">عقود صيانة سنوية لأجهزة الكمبيوتر والطابعات والشبكات.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-strip fade-in">
+            <h3 data-ar="الابتكار والموثوقية" data-en="Innovation & Reliability">الابتكار والموثوقية</h3>
+            <p data-ar="نستخدم أحدث التقنيات لضمان استمرارية أعمالكم بأعلى كفاءة وأمان سيبراني." data-en="We use the latest technologies to ensure your business continuity with high efficiency and cyber security.">نستخدم أحدث التقنيات لضمان استمرارية أعمالكم بأعلى كفاءة وأمان سيبراني.</p>
+        </div>
+
+        <div class="contact-section fade-in">
+            <h2 style="text-align: center; color: var(--primary); margin-bottom: 20px;" data-ar="اطلب استشارة تقنية" data-en="Get IT Consultation">اطلب استشارة تقنية</h2>
+            <div class="contact-grid">
+                <a href="https://wa.me/97142722324" class="c-item c-wa"><img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp"><span data-ar="واتساب" data-en="WhatsApp">واتساب</span></a>
+                <a href="mailto:essaalialshaiba@gmail.com" class="c-item c-email"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email"><span data-ar="البريد الإلكتروني" data-en="Email">Email</span></a>
+                <a href="https://www.instagram.com/essa.alshiba" class="c-item c-insta"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"><span data-ar="انستجرام" data-en="Instagram">Instagram</span></a>
+                <a href="https://www.facebook.com/profile.php?id=61585530486439" class="c-item c-fb"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968764.png" alt="Facebook"><span data-ar="فيسبوك" data-en="Facebook">فيسبوك</span></a>
+                <a href="https://www.tiktok.com/@essa_al_shaiba" class="c-item c-tik"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok"><span data-ar="تيك توك" data-en="TikTok">تيك توك</span></a>
+                <a href="https://maps.app.goo.gl/5RRUy5vSjq54iFCS9" class="c-item c-loc"><img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Map"><span data-ar="الموقع: دبي" data-en="Location: Dubai">الموقع: دبي</span></a>
+            </div>
+        </div>
+    </div>
+
+    <footer>© <span id="year"></span> Essa Al Shaiba Establishment</footer>
+
+    <script>
+        function setLanguage(lang) {
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            document.querySelector('.lang-fixed').textContent = lang === 'ar' ? 'English' : 'عربي';
+            document.querySelectorAll('[data-ar]').forEach(el => {
+                if(el.dataset[lang]) el.textContent = el.dataset[lang];
+            });
+            localStorage.setItem('esa-lang', lang);
+        }
+        function toggleLang() { setLanguage(localStorage.getItem('esa-lang') === 'ar' ? 'en' : 'ar'); }
+        const observer = new IntersectionObserver((entries)=>{
+            entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, {threshold: 0.1});
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        setLanguage(localStorage.getItem('esa-lang') || 'ar');
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
